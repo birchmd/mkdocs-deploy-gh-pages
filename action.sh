@@ -49,5 +49,8 @@ fi
 
 git remote rm origin
 git remote add origin "${remote_repo}"
+git fetch origin
+git checkout -B gh-pages origin/gh-pages
+git checkout ${GITHUB_SHA}
 
 mkdocs gh-deploy --config-file "${CONFIG_FILE}"
